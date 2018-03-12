@@ -1,0 +1,3 @@
+# Use !<file> to explicitly include a file
+# Exclude all files by default
+*
