@@ -42,14 +42,14 @@ Over the past 10 years, the quality of genome sequencing and assembly has improv
 * Genome assembly that needs to be improved
 * Dna-seq or Rna-seq data
 
-#### Improving assembly with dna-seq
+#### Improving assembly with Dna-seq
 
 * Align raw data to existing assembly
   - Create a BLAST db
 ```
 sudo ./ncbi-magicblast-1.3.0/bin/makeblastdb -in /data/Candina_Albicans/assemblies/GCF_000182965.3_ASM18296v3_genomic.fna -dbtype nucl -parse_seqids
 ```
-* 
+
   - Use Magicblast for alignment
 
 ```
