@@ -45,16 +45,16 @@ Over the past 10 years, the quality of genome sequencing and assembly has improv
 #### Improving assembly with dna-seq
 
 * Align raw data to existing assembly
-- Create a BLAST db
+  - Create a BLAST db
 ```
 sudo ./ncbi-magicblast-1.3.0/bin/makeblastdb -in /data/Candina_Albicans/assemblies/GCF_000182965.3_ASM18296v3_genomic.fna -dbtype nucl -parse_seqids
 ```
-- Use Magicblast for alignment
+	- Use Magicblast for alignment
 ```
 ./ncbi-magicblast-1.3.0/bin/magicblast -db /data/Candina_Albicans/assemblies/GCF_000182965.3_ASM18296v3_genomic.fna -sra SRR3593469 -splice F -no_unaligned -num_threads 4 -out SRR3593469_into_GCF_000182965
 ```
 
-* Convert SAM->BAM, Sort, and index SAM file**
+* Convert SAM->BAM, Sort, and index SAM file
 ```
 samtools sort /data/sra_BAM/SRR3593469_into_GCF_000182965 -O BAM -o /data/sra_BAM/test_example/SRR3593469_into_GCF_000182965.sorted.bam
 
