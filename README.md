@@ -32,7 +32,6 @@ Over the past 10 years, the quality of genome sequencing and assembly has improv
 ## Module 3 - Revamp genome with extra sequencing data
 ### Case Usages
 * Genome of interest is old or has poor coverage.
-* Use RNA-seq to improve assembly. 
 * No existing reference, user performs de-novo assembly, and then uses dna-seq or rna-seq to improve assembly.
 * Genome of interest has large number of gaps or unassigned contigs.
 
