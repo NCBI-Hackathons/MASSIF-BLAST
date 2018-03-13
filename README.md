@@ -31,14 +31,22 @@ Over the past 10 years, the quality of genome sequencing and assembly has improv
 
 ## Module 3 - Revamp genome with extra sequencing data
 ### Case Usages
-* Genome of interest is old or has poor coverage
-* Genome of interest has no proper reference genome
-* Genome of interest has large number of gaps or unassigned contigs
+* Genome of interest is old or has poor coverage.
+* Use RNA-seq to improve assembly. 
+* No existing reference, user performs de-novo assembly, and then uses dna-seq or rna-seq to improve assembly.
+* Genome of interest has large number of gaps or unassigned contigs.
 
 ### Workflow
+
+Inputs
+* Genome assembly that needs to be improved
+* Dna-seq or Rna-seq data
+
+Improving assembly with dna-seq
+* Align raw data to existing assembly
 * magicBlast alignment
-* samtools sort
-*
+* Sort SAM file
+* Use Pilon to improve assembly
 
 ### Usage
 ` `
