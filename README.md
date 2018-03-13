@@ -39,9 +39,9 @@ Over the past 10 years, the quality of genome sequencing and assembly has improv
 
 #### Inputs
 * Genome assembly that needs to be improved
-* Dna-seq or Rna-seq data
+* DNA-seq or RNA-seq data
 
-#### Improving assembly with Dna-seq
+#### Improving assembly with DNA-seq
 
 **Step 1**. Align raw data to existing assembly
 
