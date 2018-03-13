@@ -38,13 +38,23 @@ Over the past 10 years, the quality of genome sequencing and assembly has improv
 
 ### Workflow
 
-Inputs
+#### Inputs
 * Genome assembly that needs to be improved
 * Dna-seq or Rna-seq data
 
-Improving assembly with dna-seq
+#### Improving assembly with dna-seq
+
 * Align raw data to existing assembly
-* magicBlast alignment
+```
+Create a BLAST db
+
+sudo ./ncbi-magicblast-1.3.0/bin/makeblastdb -in /data/Candina_Albicans/assemblies/GCF_000182965.3_ASM18296v3_genomic.fna -dbtype nucl -parse_seqids
+
+Use Magicblast for alignment
+
+./ncbi-magicblast-1.3.0/bin/magicblast -db /data/Candina_Albicans/assemblies/GCF_000182965.3_ASM18296v3_genomic.fna -sra SRR3593469 -splice F -no_unaligned -num_threads 4 -out SRR3593469_into_GCF_000182965
+
+```
 * Sort SAM file
 * Use Pilon to improve assembly
 
