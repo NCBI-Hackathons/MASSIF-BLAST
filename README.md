@@ -67,6 +67,6 @@ java -jar /software/pilon-1.22.jar \
 
 ## Module 2 - Annotate exogenous viral DNA
 ### Use Case
-Viral DNA 
+Viral DNA -- use VirusFriends NCBI Hackathon LINK
 
 ` `
