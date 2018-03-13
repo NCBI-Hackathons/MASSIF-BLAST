@@ -62,7 +62,7 @@ samtools sort /data/sra_BAM/SRR3593469_into_GCF_000182965 -O BAM -o /data/sra_BA
 samtools index /data/sra_BAM/test_example/SRR3593469_into_GCF_000182965.sorted.bam
 ```
 
-*Step 3**. Use Pilon to improve assembly
+**Step 3**. Use Pilon to improve assembly
 ```
 java -jar /software/pilon-1.22.jar \
 --genome /data/Candina_Albicans/assemblies/GCF_000182965.3_ASM18296v3_genomic.fna \
