@@ -1,7 +1,7 @@
 # Base Image
 FROM centos:centos7
 
-RUN sudo yum install -y \
+RUN yum install -y \
     wget \
     perl-HTML-Parser \
     # cpan \
@@ -12,8 +12,8 @@ RUN sudo yum install -y \
     zlib-devel
 
 # Install sbt
-RUN curl https://bintray.com/sbt/rpm/rpm | sudo tee /etc/yum.repos.d/bintray-sbt-rpm.repo && \
-    sudo yum install -y sbt
+RUN curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.repo && \
+    yum install -y sbt
 
 # Needed for edirect
 RUN perl -MCPAN -e 'install Bundle::LWP'
@@ -22,8 +22,8 @@ RUN perl -MCPAN -e 'install Bundle::LWP'
 RUN cd /lib/ && \
     /bin/bash && \
     perl -MNet::FTP -e \
-    '$ftp = new Net::FTP("ftp.ncbi.nlm.nih.gov", Passive => 1);
-        $ftp->login; $ftp->binary;
+    '$ftp = new Net::FTP("ftp.ncbi.nlm.nih.gov", Passive => 1); \
+        $ftp->login; $ftp->binary; \
         $ftp->get("/entrez/entrezdirect/edirect.tar.gz");' \
     gunzip -c edirect.tar.gz | tar xf - && \
     rm edirect.tar.gz && \
