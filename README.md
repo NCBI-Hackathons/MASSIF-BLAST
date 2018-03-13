@@ -1,4 +1,4 @@
-# Small Genome Assembly Repair Toolkit - SGART
+# Small Genome Assembly Repair Toolkit - SGART -- 
 A toolkit of different modules to quickly assess and repair badly assembled genomes.
 
 ## Introduction
@@ -12,7 +12,7 @@ Over the past 10 years, the quality of genome sequencing and assembly has improv
 ### Data files
 
 ## Module 1 - Assess assembly quality
-### Case Usages
+### Use Cases
 *
 
 ### Workflow
@@ -20,14 +20,7 @@ Over the past 10 years, the quality of genome sequencing and assembly has improv
 ### Operation
 ` `
 
-## Module 2 - Annotate exogenous viral DNA
-### Case Usages
-* Genome of interest
 
-### Workflow
-
-### Usage
-` `
 
 ## Module 3 - Revamp genome with extra sequencing data
 ### Case Usages
@@ -68,5 +61,12 @@ java -jar /software/pilon-1.22.jar \
 --frags /data/sra_BAM/test_example/SRR3593469_into_GCF_000182965.sorted.bam \
 --outdir /data/sra_BAM/test_example/pilon_output/
 ```
+
+` `
+## Future Directions
+
+## Module 2 - Annotate exogenous viral DNA
+### Use Case
+Viral DNA 
 
 ` `
