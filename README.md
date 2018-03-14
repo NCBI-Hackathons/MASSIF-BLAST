@@ -60,6 +60,13 @@ This module improves assemblies using RNA-sequencing data that can either be sup
 ![Mod 3 Workflow](https://github.com/NCBI-Hackathons/assemblyrepair/blob/master/mod-3_workflow.png)
 
 ### Use
+To run module 3 with SRA accession numbers:<br />
+sh module3.sh --genome sample_genome.fna --acc ACC1 ACC2 ACC3 
+
+To run module 3 with local SRA data files:<br />
+sh module3.sh --genome sample_genome.fna --rnafile file1.fna file2.fna
+
+An output directory can be specified with --outdir, otherwise output is saved to directory in which the program was run. To keep all intermediate data use the '-k' or '--keep' command. A usage or help page is available with the '-h' or '--help' command.
 
 ## Testing
 * Please see our [testing README.md](https://github.com/NCBI-Hackathons/MASSIF-BLAST/tree/master/testing/README.md)
