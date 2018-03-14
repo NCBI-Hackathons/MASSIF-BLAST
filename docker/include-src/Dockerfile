@@ -1,8 +1,9 @@
 # Base Image
 FROM assemblyrepair:latest
 
-COPY src/ ~/
+COPY src/ /workdir/
+RUN chmod +x /workdir/*.sh
 
-WORKDIR ~/
+WORKDIR /workdir/
 
 CMD ["/bin/bash"]
