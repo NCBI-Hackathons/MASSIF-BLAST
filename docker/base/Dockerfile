@@ -4,19 +4,22 @@ FROM centos:centos7
 RUN yum install -y \
     wget \
     perl-HTML-Parser \
-    # cpan \
+    cpan \
     perl-libwww-perl \
     # perl-Crypt-SSLeay \
-    perl-LWP-Protocol-https \
+    # perl-LWP-Protocol-https \
     java-1.8.0-openjdk-devel \
-    zlib-devel
+    zlib-devel \
+    bzip2 \
+    gcc \
+    ncurses-devel
 
 # Install sbt
 RUN curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.repo && \
     yum install -y sbt
 
 # Needed for edirect
-RUN perl -MCPAN -e 'install Bundle::LWP'
+# RUN perl -MCPAN -e 'install Bundle::LWP'
 
 # Install edirect
 RUN cd /lib/ && \
@@ -25,10 +28,11 @@ RUN cd /lib/ && \
     '$ftp = new Net::FTP("ftp.ncbi.nlm.nih.gov", Passive => 1); \
         $ftp->login; $ftp->binary; \
         $ftp->get("/entrez/entrezdirect/edirect.tar.gz");' \
-    gunzip -c edirect.tar.gz | tar xf - && \
-    rm edirect.tar.gz && \
+    # gunzip -c edirect.tar.gz | tar xf - && \
+    tar -xzf edirect.tar.gz && \
+    rm -f edirect.tar.gz && \
     builtin exit && \
-    export PATH=${PATH}:/lib/edirect >& /dev/null || setenv PATH "${PATH}:/lib/edirect" && \
+    # export PATH=${PATH}:/lib/edirect >& /dev/null || setenv PATH "${PATH}:/lib/edirect" && \
     ./edirect/setup.sh
 
 # Install Magic-BLAST
@@ -49,17 +53,21 @@ RUN cd /lib/ && \
 
 # Install samtools
 RUN cd /lib/ && \
-    wget -O samtools.tar.gz https://github.com/samtools/samtools/archive/1.7.tar.gz && \
-    tar -xzf samtools.tar.gz && \
-    rm samtools.tar.gz && \
-    cd samtools/ && \
+    wget -O samtools.tar.bz2 https://github.com/samtools/samtools/releases/download/1.3.1/samtools-1.3.1.tar.bz2 && \
+    bzip2 -d samtools.tar.bz2 && \
+    tar -xf samtools.tar && \
+    rm samtools.tar && \
+    cd samtools-1.3.1/ && \
     ./configure && \
     make && \
     make install
 
 # Get FALP executable
 ADD falp_1.06/falp.exe.gz /lib/falp.exe.gz
-RUN gunzip /lib/FALP_1.06.zip
+RUN gunzip /lib/falp.exe.gz
+
+RUN groupadd dockusr && \
+    useradd -m dockeruser -g dockusr -s /bin/bash
 
 USER dockeruser
 WORKDIR /home/dockeruser
