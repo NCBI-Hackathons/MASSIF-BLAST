@@ -11,7 +11,7 @@ Over the past 10 years, the quality of genome sequencing and assembly has improv
 * The second module uses other DNA-sequencing data to repair areas of the genome that did not assemble well. 
 * The third module does the same as the second, but with RNA-sequencing data. 
 
-Currently, a user can run individual module depending on their needs. Other modules, such as an annotator of exogenous virus contamination or a polyploid detector, can be easily incorporated later on.
+Currently, a user can run individual modules depending on their needs. Pipelining the modules so that users can run them in tandem will be added in the future. Other modules, such as an annotator of exogenous virus contamination or a polyploid detector, can be easily incorporated later on.
 
 ## Setup
 ### System
