@@ -23,15 +23,16 @@ RUN curl https://bintray.com/sbt/rpm/rpm | tee /etc/yum.repos.d/bintray-sbt-rpm.
 
 # Install edirect
 RUN cd /lib/ && \
-    /bin/bash && \
-    perl -MNet::FTP -e \
-    '$ftp = new Net::FTP("ftp.ncbi.nlm.nih.gov", Passive => 1); \
-        $ftp->login; $ftp->binary; \
-        $ftp->get("/entrez/entrezdirect/edirect.tar.gz");' \
+    wget ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/edirect.tar.gz && \
+    # /bin/bash && \
+    # perl -MNet::FTP -e \
+    # '$ftp = new Net::FTP("ftp.ncbi.nlm.nih.gov", Passive => 1); \
+    #    $ftp->login; $ftp->binary; \
+    #    $ftp->get("/entrez/entrezdirect/edirect.tar.gz");' \
     # gunzip -c edirect.tar.gz | tar xf - && \
     tar -xzf edirect.tar.gz && \
-    rm -f edirect.tar.gz && \
-    builtin exit && \
+    # rm -f edirect.tar.gz && \
+    # builtin exit && \
     # export PATH=${PATH}:/lib/edirect >& /dev/null || setenv PATH "${PATH}:/lib/edirect" && \
     ./edirect/setup.sh
 
@@ -66,11 +67,11 @@ RUN cd /lib/ && \
 ADD falp_1.06/falp.exe.gz /lib/falp.exe.gz
 RUN gunzip /lib/falp.exe.gz
 
-RUN groupadd dockusr && \
-    useradd -m dockeruser -g dockusr -s /bin/bash
+# RUN groupadd dockusr && \
+#    useradd -m dockeruser -g dockusr -s /bin/bash
 
-USER dockeruser
-WORKDIR /home/dockeruser
+# USER dockeruser
+# WORKDIR /home/dockeruser
 
 # Add edirect to the Path
 ENV PATH "$PATH:/lib/edirect"
@@ -80,9 +81,8 @@ ENV PATH "$PATH:/lib/ncbi-magicblast-1.3.0/bin"
 ENV PATH "$PATH:/lib/ncbi-blast-2.7.1+/bin"
 
 # Create Alias to run Pilon
-RUN echo 'alias pilon="/lib/pilon-1.22.jar"' >> ~/.bashrc
+# RUN echo 'alias pilon="java -Xmx8G -jar /lib/pilon-1.22.jar"' >> ~/.bashrc
 # Create Alias to run FALP
-RUN echo 'alias falp="/lib/falp.exe"' >> ~/.bashrc
-
+# RUN echo 'alias falp="/lib/falp.exe"' >> ~/.bashrc
 
 CMD ["/bin/bash"]
