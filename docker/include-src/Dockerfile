@@ -1,7 +1,7 @@
 # Base Image
 FROM assemblyrepair:latest
 
-COPY ../../src/ ~/
+COPY src/ ~/
 
 WORKDIR ~/
 
