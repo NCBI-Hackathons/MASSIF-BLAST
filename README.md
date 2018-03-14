@@ -30,7 +30,7 @@ Depending on the module, the size of the genome of interest, and the amount of s
 
 ### Workflow
 
-![Workflow](https://github.com/NCBI-Hackathons/assemblyrepair/mod-2_workflow.png.jpg)
+![Mod 2 Workflow](https://github.com/NCBI-Hackathons/assemblyrepair/blob/master/mod-2_workflow.png.jpg)
 
 ### Output file
 
@@ -40,7 +40,7 @@ Depending on the module, the size of the genome of interest, and the amount of s
 
 ### Workflow
 
-![Workflow](https://github.com/NCBI-Hackathons/assemblyrepair/mod-3_workflow.png.jpg)
+![Mod 3 Workflow](https://github.com/NCBI-Hackathons/assemblyrepair/blob/master/mod-3_workflow.png.jpg)
 
 ### Output file
 
