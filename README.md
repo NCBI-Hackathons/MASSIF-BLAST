@@ -3,7 +3,9 @@ Modular ASSembly Improvement Framework using BLAST
 
 ## Introduction
 Over the past 10 years, the quality of genome sequencing and assembly has improved with the advancement of both experimental and analysis techniques. However, badly assembled genomes are still used in research, particularly if the assembly is old or if the genome is complex. 
-*Here, We offer a suite of modules that quickly assesses the quality of a genome assembly and improves it all in one pipeline.* 
+![Introduction](https://github.com/NCBI-Hackathons/assemblyrepair/blob/master/intro_schema.png)
+
+**We offer a suite of modules that quickly assesses the quality of a genome assembly and improves it all in one pipeline.**
 
 * The first module searches for frameshifts in highly conserved gene of that species within the user's genome assembly of interest. 
 * The second module uses other DNA-sequencing data to repair areas of the genome that did not assemble well. 
@@ -13,7 +15,7 @@ A user can run the full pipeline including all modules, some modules, or just on
 
 ## Setup
 ### System
-System needs linux with [docker](https://www.docker.com/what-docker). Depending on the module, the size of the genome of interest, and the amount of supporting data, the pipeline can require a significant amount of computational resources. We recommend using a computer that has at least 4 processor cores, 16 Gb of RAM, and approximately 3 Gb hard drive space.
+System needs linux with [docker](https://www.docker.com/what-docker) compatibility. Depending on the module, the size of the genome of interest, and the amount of supporting data, the pipeline can require a significant amount of computational resources. We recommend using a computer that has at least 4 processor cores, 16 Gb of RAM, and approximately 3 Gb hard drive space.
 
 ### Use
 Please see our [docker README.md](https://github.com/NCBI-Hackathons/MASSIF-BLAST/tree/master/docker/base/README.md)
@@ -43,12 +45,12 @@ This module improves assemblies using DNA-sequencing data that can either be sup
 
 ### Use
 To run module 2 with SRA accession numbers:<br />
-sh module2.sh --genome sample_genome.fna --acc ACC1 ACC2 ACC3 
+`sh module2.sh --genome sample_genome.fna --acc ACC1 ACC2 ACC3`
 
 To run module 2 with local SRA data files:<br />
-sh module2.sh --genome sample_genome.fna --dnafile file1.fna file2.fna
+`sh module2.sh --genome sample_genome.fna --dnafile file1.fna file2.fna`
 
-An output directory can be specified with --outdir, otherwise output is saved to directory in which the program was run. To keep all intermediate data use the '-k' or '--keep' command. A usage or help page is available with the '-h' or '--help' command.
+An output directory can be specified with `--outdir`, otherwise output is saved to directory in which the program was run. To keep all intermediate data use the `'-k'` or `'--keep'` command. A usage or help page is available with the `'-h'` or `'--help'` command.
 
 ## Module 3 - Assembly Improving Pipeline with RNA-sequencing data using [rascaf](https://github.com/mourisl/Rascaf)
 This module improves assemblies using RNA-sequencing data that can either be supplied by the user or pulled from NCBI by querying based on the species name or supplying a list of accession numbers. The output contains statistics about the improved assembly, such as percent of the genome changed and number of gaps and mismatches, as well as positional information about where these improvements were made.
