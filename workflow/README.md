@@ -11,7 +11,7 @@
   ```
   virtualenv -p python2 venv
   ```
-* Install `cwltool`, also see (here)[https://github.com/common-workflow-language/cwltool]:
+* Install `cwltool`, also see [here](https://github.com/common-workflow-language/cwltool):
   ```
   source venv/bin/activate
   pip install cwltool
