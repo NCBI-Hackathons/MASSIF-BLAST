@@ -42,6 +42,13 @@ This module improves assemblies using DNA-sequencing data that can either be sup
 ![Mod 2 Workflow](https://github.com/NCBI-Hackathons/assemblyrepair/blob/master/mod-2_workflow.png)
 
 ### Use
+To run module 2 with SRA accession numbers:<br />
+sh module2.sh --genome sample_genome.fna --acc ACC1 ACC2 ACC3 
+
+To run module 2 with local SRA data files:<br />
+sh module2.sh --genome sample_genome.fna --dnafile file1.fna file2.fna
+
+An output directory can be specified with --outdir, otherwise output is saved to directory in which the program was run. To keep all intermediate data use the '-k' or '--keep' command. A usage or help page is available with the '-h' or '--help' command.
 
 ## Module 3 - Assembly Improving Pipeline with RNA-sequencing data using [rascaf](https://github.com/mourisl/Rascaf)
 This module improves assemblies using RNA-sequencing data that can either be supplied by the user or pulled from NCBI by querying based on the species name or supplying a list of accession numbers. The output contains statistics about the improved assembly, such as percent of the genome changed and number of gaps and mismatches, as well as positional information about where these improvements were made.
