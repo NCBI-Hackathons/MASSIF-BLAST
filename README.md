@@ -2,8 +2,8 @@
 Modular ASSembly Improvement Framework using BLAST
 
 ## Introduction
-Over the past 10 years, the quality of genome sequencing and assembly has improved with the advancement of both experimental and analysis techniques. However, badly assembled genomes are still used in research, particularly if the assembly is old or if the genome is complex. 
 ![Introduction](https://github.com/NCBI-Hackathons/assemblyrepair/blob/master/intro_schema.png)
+Over the past 10 years, the quality of genome sequencing and assembly has improved with the advancement of both experimental and analysis techniques. However, badly assembled genomes are still used in research, particularly if the assembly is old or if the genome is complex. 
 
 **We offer a suite of modules that quickly assesses the quality of a genome assembly and improves it all in one pipeline.**
 
@@ -11,7 +11,7 @@ Over the past 10 years, the quality of genome sequencing and assembly has improv
 * The second module uses other DNA-sequencing data to repair areas of the genome that did not assemble well. 
 * The third module does the same as the second, but with RNA-sequencing data. 
 
-A user can run the full pipeline including all modules, some modules, or just one module depending on their needs. Other modules, such as an annotator of exogenous virus contamination or a polyploid detector, can be easily incorporated later on.
+Currently, a user can run individual module depending on their needs. Other modules, such as an annotator of exogenous virus contamination or a polyploid detector, can be easily incorporated later on.
 
 ## Setup
 ### System
