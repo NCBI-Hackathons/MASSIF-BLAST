@@ -11,7 +11,7 @@ Depending on the module, the size of the genome of interest, and the amount of s
 ### Software Packages
 * Please see our [docker README.md](https://github.com/NCBI-Hackathons/MASSIF-BLAST/tree/master/docker/base/README.md)
 
-## Module 1 - Quickly assess assembly quality
+## Module 1 - Pipeline to Quickly Assess Genome Assembly Quality
 This module takes a list of conserved genes which can be at a phylum taxonomic level (or lower) and compares the protein sequence of a reference genome to the assembly of interest. Poor assemblies will likely exhibit frameshifts or incomplete protein sequences. The output file is a tab-deliminated file comparing its protein quality how many of the conserved genes had poor protein sequence in the assembly of interest.
 
 ### Use Cases
