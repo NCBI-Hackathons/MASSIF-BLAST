@@ -1,0 +1,2 @@
+database: "assembly"
+query: "Candida Albicans[Organism] AND latest[filter]"
