@@ -1,0 +1,4 @@
+database: "assembly"
+query: "Candida Albicans[Organism] AND latest[filter]"
+format: "docsum"
+file-string: "_genomic.fna.gz"

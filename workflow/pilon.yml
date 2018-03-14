@@ -1,0 +1,9 @@
+genome:
+  class: File
+  path: /data/Candida_Albicans/assemblies/GCF_000182965.3_ASM18296v3_genomic.fna
+frags:
+  class: File
+  path: /data/sra_BAM/test_example/SRR3593469_into_GCF_000182965.sorted.bam
+output: test
+options: --tracks
+
