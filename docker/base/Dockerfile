@@ -7,7 +7,7 @@ RUN yum install -y \
     cpan \
     perl-libwww-perl \
     # perl-Crypt-SSLeay \
-    # perl-LWP-Protocol-https \
+    perl-LWP-Protocol-https \
     java-1.8.0-openjdk-devel \
     zlib-devel \
     bzip2 \
