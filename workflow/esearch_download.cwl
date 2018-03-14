@@ -6,32 +6,34 @@ requirements:
   - class: DockerRequirement
     dockerImageId: assemblyscripts:latest
 
-baseCommand: ./get_genome_assemblies.sh
+baseCommand: ["bash", "/workdir/get_genome_assemblies.sh"]
 
 inputs:
   - id: database
-    type: String
+    type: string
     inputBinding:
       position: 1
       prefix: -db
   - id: query
-    type: String
+    type: string
     inputBinding:
       position: 2
       prefix: -q
   - id: format
-    type: string[]?
+    type: string?
     inputBinding:
       position: 3
       prefix: -f
-  - id: file-string
-    type: string[]?
+  - id: file_string
+    type: string
     inputBinding:
       position: 4
       prefix: -fs
 
 outputs:
-  - id: outs
-    type: File
+  output:
+    type:
+      type: array
+      items: File
     outputBinding:
-      glob: ["*${file-string}"]
+      glob: "*_genomic.fna.gz"

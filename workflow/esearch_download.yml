@@ -1,2 +1,3 @@
 database: "assembly"
 query: "Candida Albicans[Organism] AND latest[filter]"
+file_string: "_genomic.fna.gz"
